@@ -1,3 +1,4 @@
+import 'package:componentes_flutter/src/pages/alert_page.dart';
 import 'package:componentes_flutter/src/providers/menu_provider.dart';
 import 'package:componentes_flutter/src/utils/icons_string_util.dart';
 import 'package:flutter/material.dart';
@@ -29,13 +30,13 @@ class HomePage extends StatelessWidget {
         // Aqui ya podemos colocar el widget que necesitamos con la informacion que tiene del snapshot.
         return ListView(
           // Recibimos la data que tenemos almacenada con lo que sacamos del JSON
-          children: _listaItems(snapshot.data),
+          children: _listaItems(snapshot.data, context),
         );
       },
     );
   }
 
-  List<Widget> _listaItems(List<dynamic> data) {
+  List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
     // Iniciamos la lista opciones
     final List<Widget> opciones = [];
     //Con el foreach iteraremos cada elemento de la lista data que tenemos
@@ -46,7 +47,10 @@ class HomePage extends StatelessWidget {
         title: Text(opt['texto']),
         leading: getIcon(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {},
+        onTap: () {
+          final route = MaterialPageRoute(builder: (context) => AlertPage());
+          Navigator.push(context, route);
+        },
       );
       //Aqui simplemente agregamos a nuestra lista opciones los ListTiles y un divider
       opciones..add(widgetTemp)..add(Divider());
