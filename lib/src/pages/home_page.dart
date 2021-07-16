@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
       //Aqui en el metodo builder se le envia el contexto y un snapshot que debe ser del tipo de datos que requerimos en nuestra funcion future que estamos trabajando. En este caso por ejemplo menuProvider.cargarData() es una lista dynamic entoncs justamente tendriamos que colocar ese tipo de dato.
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
         // Finalmente aqui confirmamos que estamos recibiendo la data y la imprimimos
-        print('builder');
-        print(snapshot.data);
+        // print('builder');
+        // print(snapshot.data);
 
         // Aqui ya podemos colocar el widget que necesitamos con la informacion que tiene del snapshot.
         return ListView(
@@ -48,8 +48,12 @@ class HomePage extends StatelessWidget {
         leading: getIcon(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () {
-          final route = MaterialPageRoute(builder: (context) => AlertPage());
-          Navigator.push(context, route);
+          // esta es la forma de viajar entre rutas de forma estandar, no es la recomendada pero se realiza colocando un materialPageRoute que tiene un builder al cual le enviamos el contexto y como retorno colocamos la pagina a la que queremos ir
+          // final route = MaterialPageRoute(builder: (context) => AlertPage());
+          // Luego se coloca el push para ir a la pagina ya que igual requeriamos un contexto y simplemente colocamos la ruta para poder ir a esa pagina
+          // Navigator.push(context, route);
+          //Para navegar a rutas especificas Navigator tiene la propiedad Navigator.pushNamed que solo espera el contexto y el nombre de la ruta. ES NECESARIO definir las rutas en nuestro main que sino no sabe donde esta la ruta q le especificamos
+          Navigator.pushNamed(context, '/${opt['ruta'].toString()}');
         },
       );
       //Aqui simplemente agregamos a nuestra lista opciones los ListTiles y un divider
