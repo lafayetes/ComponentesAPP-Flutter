@@ -57,10 +57,10 @@ class CardPage extends StatelessWidget {
               placeholder: AssetImage('assets/jar-loading.gif'),
               image: NetworkImage(
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Landscape_Arnisee-region.JPG/1200px-Landscape_Arnisee-region.JPG')),
-          Image(
-            image: NetworkImage(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Landscape_Arnisee-region.JPG/1200px-Landscape_Arnisee-region.JPG'),
-          ),
+          // Image(
+          //   image: NetworkImage(
+          //       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Landscape_Arnisee-region.JPG/1200px-Landscape_Arnisee-region.JPG'),
+          // ),
           Text('Nose que colocar de titulo')
         ],
       ),

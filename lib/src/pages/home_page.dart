@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       //Esta opcion de future lo que hace es realizar la funcion que trabajara con future.
       future: menuProvider.cargarData(),
       // El initialData son los datos que tendra de inicio el futurebuilder
-      initialData: [],
+      //initialData: [],
       //Aqui en el metodo builder se le envia el contexto y un snapshot que debe ser del tipo de datos que requerimos en nuestra funcion future que estamos trabajando. En este caso por ejemplo menuProvider.cargarData() es una lista dynamic entoncs justamente tendriamos que colocar ese tipo de dato.
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
         // Finalmente aqui confirmamos que estamos recibiendo la data y la imprimimos
