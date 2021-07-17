@@ -94,7 +94,7 @@ class CardPage extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
           color: Colors.white,
-          //Para el box Shadow manejamos una lista de tipo BoxShadow que puede llevar las propiedades color, blurRadius, SpreadRadius y el offset. Este ultimo lo que hace es ubicar la sombra en base a las coordenadas que se colocan tomandolo como un plano cartesiano
+          //Para el box Shadow manejamos una lista de tipo BoxShadow que puede llevar las propiedades color, blurRadius, SpreadRadius y el offset. Este ultimo lo que hace es ubicar la sombra en base a las coordenadas que se colocan tomandolo como un plano cartesiano.
           boxShadow: <BoxShadow>[
             BoxShadow(
                 color: Colors.black26,
